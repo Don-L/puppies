@@ -15,14 +15,6 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-app.use(function(req, res, next) {
-    // Set permissive CORS header - this allows this server to be used only as
-    // an API server
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader("Access-Control-Allow-Headers", 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-});
-
 /**
  * Create HTTP server.
  */
