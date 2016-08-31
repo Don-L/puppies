@@ -10,7 +10,7 @@ var PuppiesBox = React.createClass({
     request.onload = function() {
       if(request.status === 200) {
         var data = JSON.parse(request.responseText);
-        this.setState({data: data});
+        this.setState({data: data.data});
       }
     }.bind(this);
     request.send(null);
@@ -27,7 +27,7 @@ var PuppiesBox = React.createClass({
   },
 
   render: function(){
-    console.log(this.state.data);
+    console.log("hello", this.state.data);
 
     const nodes = this.state.data.map(function(puppy, index) {
         return (

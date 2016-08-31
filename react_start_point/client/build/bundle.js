@@ -19768,7 +19768,7 @@
 	    request.onload = function () {
 	      if (request.status === 200) {
 	        var data = JSON.parse(request.responseText);
-	        this.setState({ data: data });
+	        this.setState({ data: data.data });
 	      }
 	    }.bind(this);
 	    request.send(null);
@@ -19785,7 +19785,7 @@
 	  },
 	
 	  render: function render() {
-	    console.log(this.state.data);
+	    console.log("hello", this.state.data);
 	
 	    var nodes = this.state.data.map(function (puppy, index) {
 	      return React.createElement(
