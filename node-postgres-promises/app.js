@@ -14,6 +14,14 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(function(req, res, next) {
+    // Set permissive CORS header - this allows this server to be used only as
+    // an API server
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader("Access-Control-Allow-Headers", 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));

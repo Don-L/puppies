@@ -51,7 +51,7 @@
 	var PuppiesBox = __webpack_require__(159);
 	
 	window.onload = function () {
-	  ReactDOM.render(React.createElement(PuppiesBox, { url: 'http://localhost:5000/puppies' }), document.getElementById('app'));
+	  ReactDOM.render(React.createElement(PuppiesBox, { url: 'http://localhost:3000/api/puppies' }), document.getElementById('app'));
 	};
 
 /***/ },
